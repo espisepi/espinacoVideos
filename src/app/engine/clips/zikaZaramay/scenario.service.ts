@@ -2,7 +2,6 @@
 
 import { Injectable, ElementRef, NgZone } from '@angular/core';
 import { WindowRefService } from './../../../services/window-ref.service';
-
 import {
   Engine,
   Scene,
@@ -19,7 +18,9 @@ import {
   SolidParticleSystem,
   Layer
 } from 'babylonjs';
+
 import { Calavera } from './calavera';
+import { CuboVideo } from './cuboVideo';
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,7 @@ export class ScenarioService {
     this.createBackground('assets/textures/charliGarcia.mp4');
 
     const calavera = new Calavera(this.scene, this.camera);
+    const cuboVideo = new CuboVideo(this.scene, this.camera);
     // this.createPhotoDome();
     // this.createVideo();
     // this.createCubeParticles();
@@ -67,13 +69,15 @@ export class ScenarioService {
 
     // Access video for play/pause
     let playing = true;
-    document.onkeydown = () => {
+    document.onkeydown = (event) => {
+      if (event.shiftKey) {
         if (playing) {
             videoTexture.video.pause();
         } else {
             videoTexture.video.play();
         }
         playing = !playing;
+      }
     }
 
   }
