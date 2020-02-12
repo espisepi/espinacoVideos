@@ -13,7 +13,8 @@ import {
   ShaderMaterial,
   VideoTexture,
   CubeMapToSphericalPolynomialTools,
-  MeshBuilder
+  MeshBuilder,
+  StandardMaterial
 } from 'babylonjs';
 
 export class CuboVideo {
@@ -35,9 +36,22 @@ export class CuboVideo {
   private createMesh(scene: Scene): void {
     this.mesh = MeshBuilder.CreateBox('box', {}, scene);
     this.mesh.material = this.material;
+    // Codigo sucio
     let cubo2 = MeshBuilder.CreateBox('box', {}, scene);
     cubo2.material = this.material;
     cubo2.position.x = 4;
+    
+    let playing = true;
+    document.onkeydown = (event) => {
+      if (event.shiftKey) {
+        if (playing) {
+          cubo2.setEnabled(true);
+        } else {
+          cubo2.setEnabled(false);
+        }
+        playing = !playing;
+      }
+    }
 
   }
 
@@ -54,6 +68,7 @@ export class CuboVideo {
     const textureVideo = new VideoTexture('video', 'assets/textures/charliGarcia.mp4', scene, false);
     this.material.setTexture('textureSampler', textureVideo);
     // this.material.backFaceCulling = false;
+    // Creamos distintos materials, lo guardamos como variables globales, con el mismo textureVideo
   }
 
   private createShaders(): void {
