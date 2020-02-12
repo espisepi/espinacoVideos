@@ -1,3 +1,7 @@
+Thanks to JohnnyDevNull for the template, god bless you.
+
+https://github.com/JohnnyDevNull/ng-babylon-template
+
 # ng-babylon
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) and is designed as a basic template for [BabylonJS](https://www.babylonjs.com/) combined with [Angular](https://angular.io/) and [Bootstrap](https://getbootstrap.com/) in Version 4.0
