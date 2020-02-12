@@ -45,7 +45,7 @@ export class ScenarioService {
 
     this.createCameraArc();
 
-    this.createBackground('assets/textures/charliGarcia.mp4');
+    // this.createBackground('assets/textures/charliGarcia.mp4');
 
     const calavera = new Calavera(this.scene, this.camera);
     const cuboVideo = new CuboVideo(this.scene, this.camera);

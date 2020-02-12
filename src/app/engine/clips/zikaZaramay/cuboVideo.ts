@@ -35,6 +35,10 @@ export class CuboVideo {
   private createMesh(scene: Scene): void {
     this.mesh = MeshBuilder.CreateBox('box', {}, scene);
     this.mesh.material = this.material;
+    let cubo2 = MeshBuilder.CreateBox('box', {}, scene);
+    cubo2.material = this.material;
+    cubo2.position.x = 4;
+
   }
 
   private createShaderMaterial(scene: Scene): void {
