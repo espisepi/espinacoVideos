@@ -41,6 +41,14 @@ export class CuboVideo {
     cubo2.material = this.material;
     cubo2.position.x = 4;
     
+    let cubo3 = MeshBuilder.CreateCylinder('cilinder', {}, scene);
+    cubo3.material = this.material;
+    cubo3.position.x = 1;
+
+    //let cubo4 = MeshBuilder.
+
+
+    // Fin codigo sucio
     let playing = true;
     document.onkeydown = (event) => {
       if (event.shiftKey) {
