@@ -1,6 +1,5 @@
 import { Scenario } from './scenario';
 
-
 // lo suyo es que esto sea una interface y no una implementacion
 export class PublicoDeFiesta {
 
@@ -15,12 +14,9 @@ export class PublicoDeFiesta {
     /*
     Aqui es donde instanciaremos todos los objetos que
     se utilizaran en nuestra escena, Ejemplo:
-    import { Calavera } from '../publicoFiestero/calavera';
-    const calavera = new Calavera(this.scenario.scene, this.scenario.camera);
+    import { OceanWaves } from '../publicoFiestero/oceanWaves';
+    const oceanWaves = new OceanWaves(this.scenario);
     */
-
-    
-
 
 
   }
