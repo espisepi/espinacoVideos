@@ -1,4 +1,5 @@
 import { Scenario } from './scenario';
+import { OceanWaves } from '../misObjetos/oceanWaves';
 
 // lo suyo es que esto sea una interface y no una implementacion
 export class PublicoDeFiesta {
@@ -14,10 +15,9 @@ export class PublicoDeFiesta {
     /*
     Aqui es donde instanciaremos todos los objetos que
     se utilizaran en nuestra escena, Ejemplo:
-    import { OceanWaves } from '../publicoFiestero/oceanWaves';
+    import { OceanWaves } from '../misObjetos/oceanWaves';
     const oceanWaves = new OceanWaves(this.scenario);
     */
-
 
   }
 
