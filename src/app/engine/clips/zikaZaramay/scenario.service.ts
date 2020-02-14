@@ -19,8 +19,8 @@ import {
   Layer
 } from 'babylonjs';
 
-import { Calavera } from '../../publicoFiestero/calavera';
-import { CuboVideo } from '../../publicoFiestero/cuboVideo';
+import { Calavera } from '../../misObjetos/calavera';
+import { CuboVideo } from '../../misObjetos/cuboVideo';
 
 @Injectable({
   providedIn: 'root'
