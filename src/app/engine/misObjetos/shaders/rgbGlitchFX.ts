@@ -1,11 +1,15 @@
+import { Effect } from 'babylonjs';
 
 export class RgbGlitchFX {
   public fragmentShader: string;
+  public fragmentShaderName: string;
   public vertexShader: string;
+  public vertexShaderName: string;
 
   public constructor() {
     this.createVertexShader();
     this.createFragmentShader();
+    this.addShaderToShadersStore();
   }
 
   private createVertexShader() {
@@ -13,6 +17,7 @@ export class RgbGlitchFX {
   }
 
   private createFragmentShader(): void {
+    this.fragmentShaderName = 'rgbGlitchEffectFragmentShader';
     this.fragmentShader = `
     varying vec2 vUV;
     uniform sampler2D textureSampler;
@@ -51,6 +56,11 @@ export class RgbGlitchFX {
       c += rgbShift(p, shift);
       gl_FragColor = c;
     }`;
+  }
+
+
+  public addShaderToShadersStore(): void {
+    Effect.ShadersStore[this.fragmentShaderName] = this.fragmentShader;
   }
 
 }
