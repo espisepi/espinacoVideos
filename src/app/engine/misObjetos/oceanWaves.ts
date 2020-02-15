@@ -1,8 +1,7 @@
 // https://www.babylonjs-playground.com/#L76FB1#49
 
-import { Scenario } from '../clipsEngine/scenario';
-import { WaterMaterial } from 'babylonjs-materials';
-import { StandardMaterial, Mesh, Vector2, Texture } from 'babylonjs';
+import { Scenario } from '../clipsEngine/scenario1/scenario';
+import { Mesh } from 'babylonjs';
 import { Water } from './water';
 import { Ground } from './ground';
 

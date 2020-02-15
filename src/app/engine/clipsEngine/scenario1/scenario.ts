@@ -1,4 +1,3 @@
-
 import {
   Engine,
   Scene,
@@ -6,21 +5,19 @@ import {
   PointLight,
   Vector3
 } from 'babylonjs';
-import { PublicoDeFiesta } from './publicoDeFiesta';
-
-
+import { ClipObjects } from './clipObjects';
 
 export class Scenario {
   public scene: Scene;
   public camera: ArcRotateCamera;
   private light: PointLight;
-  private publicoDeFiesta: PublicoDeFiesta;
+  private clipObjects: ClipObjects;
 
   public constructor(engine: Engine) {
     this.createScene(engine);
     this.createCamera();
     this.createLight();
-    this.darleVidaAlEscenario();
+    this.createClipObjects();
   }
 
 
@@ -54,8 +51,8 @@ export class Scenario {
     });
   }
 
-  public darleVidaAlEscenario(): void {
-    this.publicoDeFiesta = new PublicoDeFiesta(this);
+  public createClipObjects(): void {
+    this.clipObjects = new ClipObjects(this);
   }
 
   /* Metodos privados que utilizo */

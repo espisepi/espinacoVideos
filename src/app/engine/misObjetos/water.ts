@@ -1,4 +1,4 @@
-import { Scenario } from '../clipsEngine/scenario';
+import { Scenario } from '../clipsEngine/scenario1/scenario';
 import { Mesh, Vector2, Texture } from 'babylonjs';
 import { WaterMaterial } from 'babylonjs-materials';
 

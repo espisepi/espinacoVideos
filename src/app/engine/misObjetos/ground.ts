@@ -1,5 +1,5 @@
-import { Material, Mesh, Texture, StandardMaterial } from 'babylonjs';
-import { Scenario } from '../clipsEngine/scenario';
+import { Mesh, Texture, StandardMaterial } from 'babylonjs';
+import { Scenario } from '../clipsEngine/scenario1/scenario';
 
 export class Ground {
   public scenario: Scenario;

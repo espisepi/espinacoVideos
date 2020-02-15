@@ -1,10 +1,8 @@
 import { Injectable, ElementRef, NgZone } from '@angular/core';
 import {
-  Engine,
-  Scene,
-  ArcRotateCamera,
+  Engine
 } from 'babylonjs';
-import { Scenario } from './scenario';
+import { Scenario } from './scenario1/scenario';
 import { WindowRefService } from 'src/app/services/window-ref.service';
 
 @Injectable({
