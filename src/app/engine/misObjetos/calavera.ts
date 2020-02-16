@@ -52,12 +52,12 @@ void main(void){
 }
 `;
 
-  public constructor(scene: Scene, camera: ArcRotateCamera){
+  public constructor(scene: Scene, camera: Camera){
     Effect.ShadersStore['rgbGlitchEffectFragmentShader'] = this.rgbGlitchFX;
     this.inicializarCalavera(scene, camera);
   }
 
-  public inicializarCalavera(scene: Scene, camera: ArcRotateCamera): void {
+  public inicializarCalavera(scene: Scene, camera: Camera): void {
     // The first parameter can be used to specify which mesh to import. Here we import all meshes
     SceneLoader.ImportMesh('', 'assets/scenes/', 'skull.babylon', scene, (newMeshes) => {
       // Set the target of the camera to the first imported mesh
