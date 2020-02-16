@@ -1,4 +1,5 @@
 import { Scenario } from './scenario';
+import { Calavera } from '../../misObjetos/calavera';
 
 // lo suyo es que esto sea una interface y no una implementacion
 export class ClipObjects {
@@ -18,6 +19,7 @@ export class ClipObjects {
     const oceanWaves = new OceanWaves(this.scenario);
     */
 
+    const calavera = new Calavera(this.scenario.scene, this.scenario.camera);
   }
 
 }

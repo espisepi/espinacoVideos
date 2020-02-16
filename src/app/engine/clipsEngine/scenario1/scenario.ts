@@ -5,10 +5,14 @@ import {
   PointLight,
   Vector3,
   Camera,
-  WebVRFreeCamera
+  WebVRFreeCamera,
+  ActionManager,
+  ExecuteCodeAction,
+  UniversalCamera
 } from 'babylonjs';
 import { ClipObjects } from './clipObjects';
 import { PostEffects } from './PostEffects';
+import { KeyboardInputs } from './keyboard';
 
 export class Scenario {
   public scene: Scene;
@@ -19,18 +23,24 @@ export class Scenario {
 
   public constructor(engine: Engine) {
     this.createScene(engine);
-    this.createCamera('arcRotateCamera');
+    this.createCamera('universalCamera');
     this.createLight();
     this.createClipObjects();
     this.createPostEffects();
+    this.createKeyboardInputs();
   }
 
 
   /* Metodos del constructor */
 
+  public createKeyboardInputs(): void {
+    const keyBoard = new KeyboardInputs(this);
+  }
+
   public createCamera(cameraName: string) {
     if (cameraName === 'arcRotateCamera') { this.createArcRotateCamera(); }
     if (cameraName === 'webVRFreeCamera') { this.createWebVRFreeCamera(); }
+    if (cameraName === 'universalCamera') { this.createUniversalCamera(); }
   }
 
   public createPostEffects(): void {
@@ -57,6 +67,13 @@ export class Scenario {
   }
 
   /* Metodos privados que utilizo */
+
+  public createUniversalCamera(): void {
+    this.camera = new UniversalCamera(
+      'UniversalCamera',
+      new Vector3(0, 0, -10), this.scene);
+    this.attachControlCamera();
+  }
 
   public createWebVRFreeCamera(): void {
     this.camera = new WebVRFreeCamera(
