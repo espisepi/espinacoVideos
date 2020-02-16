@@ -13,13 +13,14 @@ import {
 import { ClipObjects } from './clipObjects';
 import { PostEffects } from './PostEffects';
 import { KeyboardInputs } from './keyboard';
+import { AnimationUtility } from './animationUtility';
 
 export class Scenario {
   public scene: Scene;
   public camera: Camera;
-  private light: PointLight;
-  private clipObjects: ClipObjects;
-  private postEffects: PostEffects;
+  public light: PointLight;
+  public clipObjects: ClipObjects;
+  public postEffects: PostEffects;
 
   public constructor(engine: Engine) {
     this.createScene(engine);
@@ -27,11 +28,16 @@ export class Scenario {
     this.createLight();
     this.createClipObjects();
     this.createPostEffects();
-    this.createKeyboardInputs();
+    //this.createKeyboardInputs();
+    this.createAnimations();
   }
 
 
   /* Metodos del constructor */
+
+  public createAnimations(): void {
+    const animation = new AnimationUtility(this);
+  }
 
   public createKeyboardInputs(): void {
     const keyBoard = new KeyboardInputs(this);
@@ -63,7 +69,7 @@ export class Scenario {
   }
 
   public createClipObjects(): void {
-    this.clipObjects = new ClipObjects(this);
+    this.clipObjects = new ClipObjects(this.scene, this.camera);
   }
 
   /* Metodos privados que utilizo */

@@ -23,7 +23,7 @@ export class CuboVideo {
   public customVertexShader: string;
   public customFragmentShader: string;
 
-  public constructor(scene: Scene, camera: ArcRotateCamera) {
+  public constructor(scene: Scene, camera: Camera) {
     this.initializeObject(scene, camera);
   }
 
@@ -34,10 +34,10 @@ export class CuboVideo {
   }
 
   private createMesh(scene: Scene): void {
-    this.mesh = MeshBuilder.CreateBox('box', {}, scene);
+    this.mesh = MeshBuilder.CreateBox('box1', {}, scene);
     this.mesh.material = this.material;
     // Codigo sucio
-    let cubo2 = MeshBuilder.CreateBox('box', {}, scene);
+    let cubo2 = MeshBuilder.CreateBox('box2', {}, scene);
     cubo2.material = this.material;
     cubo2.position.x = 4;
     
