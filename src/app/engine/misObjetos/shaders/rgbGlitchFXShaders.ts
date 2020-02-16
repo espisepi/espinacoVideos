@@ -17,7 +17,7 @@ export class RgbGlitchFX {
   }
 
   private createFragmentShader(): void {
-    this.fragmentShaderName = 'rgbGlitchEffectFragmentShader';
+    this.fragmentShaderName = 'rgbGlitchEffect';
     this.fragmentShader = `
     varying vec2 vUV;
     uniform sampler2D textureSampler;
@@ -60,7 +60,7 @@ export class RgbGlitchFX {
 
 
   public addShaderToShadersStore(): void {
-    Effect.ShadersStore[this.fragmentShaderName] = this.fragmentShader;
+    Effect.ShadersStore['rgbGlitchEffectFragmentShader'] = this.fragmentShader;
   }
 
 }

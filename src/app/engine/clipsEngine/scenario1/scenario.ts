@@ -6,22 +6,29 @@ import {
   Vector3
 } from 'babylonjs';
 import { ClipObjects } from './clipObjects';
+import { PostEffects } from './PostEffects';
 
 export class Scenario {
   public scene: Scene;
   public camera: ArcRotateCamera;
   private light: PointLight;
   private clipObjects: ClipObjects;
+  private postEffects: PostEffects;
 
   public constructor(engine: Engine) {
     this.createScene(engine);
     this.createCamera();
     this.createLight();
     this.createClipObjects();
+    this.createPostEffects();
   }
 
 
   /* Metodos del constructor */
+
+  public createPostEffects(): void {
+    // this.postEffects = new PostEffects(this);
+  }
 
   public createScene(engine: Engine): void {
     this.scene = new Scene(engine);
