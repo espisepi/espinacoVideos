@@ -18,7 +18,7 @@ export class ClipObjects {
     const oceanWaves = new OceanWaves(this.scenario);
     */
 
-    const calavera = new Calavera(scene, camera);
+    // const calavera = new Calavera(scene, camera);
     // const cuboVideo = new CuboVideo(scene, camera);
   }
 

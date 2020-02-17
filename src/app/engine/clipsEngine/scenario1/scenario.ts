@@ -14,7 +14,7 @@ import { ClipObjects } from './clipObjects';
 import { PostEffects } from './PostEffects';
 import { KeyboardInputs } from './keyboard';
 import { AnimationUtility } from './animationUtility';
-import { Sucio } from './sucio';
+import { NubesParticleSystem } from './NubesParticleSystem';
 
 export class Scenario {
   public scene: Scene;
@@ -31,14 +31,14 @@ export class Scenario {
     this.createPostEffects();
     //this.createKeyboardInputs();
     //this.createAnimations();
-    this.createSucio();
+    //this.createNubesParticleSystem();
   }
 
 
   /* Metodos del constructor */
 
-  public createSucio(): void {
-    const sucio = new Sucio(this.scene);
+  public createNubesParticleSystem(): void {
+    const sucio = new NubesParticleSystem(this.scene);
   }
 
   public createAnimations(): void {
