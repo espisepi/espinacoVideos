@@ -19,7 +19,7 @@ export class ClipObjects {
     */
 
     const calavera = new Calavera(scene, camera);
-    const cuboVideo = new CuboVideo(scene, camera);
+    // const cuboVideo = new CuboVideo(scene, camera);
   }
 
 }
