@@ -6,5 +6,5 @@
   "files.encoding": "utf8"
   ,"editor.lineNumbers": "off"
   ,"editor.folding": false
-  ,"editor.glyphMargin": false
+  ,"editor.glyphMargin": true
 }

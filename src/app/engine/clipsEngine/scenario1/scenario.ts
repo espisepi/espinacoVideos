@@ -8,34 +8,43 @@ import {
   WebVRFreeCamera,
   ActionManager,
   ExecuteCodeAction,
-  UniversalCamera
+  UniversalCamera,
+  HemisphericLight,
+  Light
 } from 'babylonjs';
 import { ClipObjects } from './clipObjects';
 import { PostEffects } from './PostEffects';
 import { KeyboardInputs } from './keyboard';
 import { AnimationUtility } from './animationUtility';
 import { NubesParticleSystem } from './NubesParticleSystem';
+import { ParticlesLearn } from './particlesLearn';
+import { threadId } from 'worker_threads';
 
 export class Scenario {
   public scene: Scene;
   public camera: Camera;
-  public light: PointLight;
+  public light: Light;
   public clipObjects: ClipObjects;
   public postEffects: PostEffects;
 
   public constructor(engine: Engine) {
     this.createScene(engine);
-    this.createCamera('universalCamera');
-    this.createLight();
+    this.createCamera('arcRotateCamera');
+    this.createHemisphericLight();
     this.createClipObjects();
     this.createPostEffects();
     //this.createKeyboardInputs();
     //this.createAnimations();
     //this.createNubesParticleSystem();
+    this.createParticlesLearn();
   }
 
 
   /* Metodos del constructor */
+
+  public createParticlesLearn(): void {
+    const particlesLearn = new ParticlesLearn(this.scene);
+  }
 
   public createNubesParticleSystem(): void {
     const sucio = new NubesParticleSystem(this.scene);
@@ -63,15 +72,24 @@ export class Scenario {
     this.scene = new Scene(engine);
   }
 
-  public createLight() {
-    this.light = new PointLight(
+  public createPointLight() {
+    const light = new PointLight(
     'Omni',
     new Vector3(20, 200, 100),
     this.scene);
-
     this.scene.registerBeforeRender(() => {
-      this.light.position = this.camera.position;
+      light.position = this.camera.position;
     });
+    this.light = light;
+  }
+
+  public createHemisphericLight() {
+    this.light = new HemisphericLight(
+      'light1',
+      new Vector3(0, 1, 0),
+      this.scene
+    );
+    this.light.intensity = 1.0;
   }
 
   public createClipObjects(): void {
